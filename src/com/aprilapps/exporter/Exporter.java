@@ -17,7 +17,7 @@ public abstract class Exporter {
         try {
             readResourcesFile();
         } catch (Exception e) {
-            System.out.println("ERROR: Problem when reading resources resourcesFile: " + e.getMessage());
+            System.out.println("ERROR: Problem when reading resources csvFile: " + e.getMessage());
         }
     }
 

@@ -2,6 +2,7 @@ package com.aprilapps;
 
 
 import com.aprilapps.exporter.AndroidExporter;
+import com.aprilapps.importer.AndroidImporter;
 
 import java.util.Scanner;
 
@@ -20,6 +21,8 @@ public class App {
             case ANDROID_XML_TO_CSV:
                 new AndroidExporter().start();
                 break;
+            case ANDROID_CSV_TO_XML:
+                new AndroidImporter().start();
         }
     }
 

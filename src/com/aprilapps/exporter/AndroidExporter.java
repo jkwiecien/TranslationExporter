@@ -27,7 +27,7 @@ public class AndroidExporter extends Exporter {
 
     @Override
     public String getAskForResourcesFileText() {
-        return "Enter the path to you resources XML resourcesFile.";
+        return "Enter the path to your resources XML csvFile.";
     }
 
 }

@@ -13,7 +13,8 @@ public class AndroidLineParser extends LineParser {
     private static final String NAME_REGEX = "(?<=string name=\")(.*)(?=\">)";
     private static final String VALUE_REGEX = "(?<=>)(.*)(?=</)";
     private static final String INJECT_STRING_REGEX = "%\\d+\\$[s]";
-    private static final String INJECT_NUMBER_REGEX = "%\\d+\\$[df]";
+    private static final String INJECT_INTEGER_REGEX = "%\\d+\\$[d]";
+    private static final String INJECT_FLOAT_REGEX = "%\\d+\\$[f]";
 
     @Override
     public void parseLine(String line) {
@@ -29,7 +30,8 @@ public class AndroidLineParser extends LineParser {
 
             value = value.trim();
             value = value.replaceAll(INJECT_STRING_REGEX, "{s}");
-            value = value.replaceAll(INJECT_NUMBER_REGEX, "{n}");
+            value = value.replaceAll(INJECT_INTEGER_REGEX, "{d}");
+            value = value.replaceAll(INJECT_FLOAT_REGEX, "{f}");
             value = value.replace("\\n", "{l}");
             value = value.replace("\\'", "'");
 
